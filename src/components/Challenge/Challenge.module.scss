@@ -1,0 +1,57 @@
+
+.challengeContainer {
+
+}
+
+.challenge {
+  width: 500px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  gap: 50px;
+}
+
+.challengeOne {
+  height: 50px;
+  width: 75px;
+  position: relative;
+  display: block;
+  border-radius: 50%;
+}
+
+.challengeOne:after,
+.challengeOne:before {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: orange;
+  top: calc((50px - 25px) / 2);
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+.challengeOne:before {
+  left: 0;
+}
+
+.challengeOne:after {
+  right: 0;
+}
+
+.challengeTwo {
+  height: 50px;
+  width: 50px;
+  background-color: rebeccapurple;
+  border-top-right-radius: 25px;
+}
+
+.challengeThree {
+  width: 0px;
+  height: 0px;
+  border-left: 30px solid lightgrey;
+  border-right: 30px solid grey;
+  border-bottom: 50px solid orange;
+}
