@@ -1,0 +1,17 @@
+.layout {
+  display: flex;
+  flex-flow: row no-wrap;
+}
+
+.editorWindow,
+.challengeWindow {
+  width: 50%;
+  height: 95vh;
+}
+
+.challengeWindow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}

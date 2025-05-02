@@ -1,13 +1,11 @@
 import * as htmlToImage from 'html-to-image';
 import { type ComponentPropsWithoutRef, type Ref, useEffect, useState } from 'react';
 import { getHexFromUint8 } from '../../utils/getHexFromUint8';
+import useRunnerStore from '../../utils/useRunnerStore';
 
-interface ComparisonProps extends ComponentPropsWithoutRef<'div'> {
-  challengeRef: Ref<HTMLDivElement>;
-  solutionRef: Ref<HTMLDivElement>;
-}
-
-const Comparison = ({ challengeRef, solutionRef }: ComparisonProps) => {
+const Comparison = () => {
+  const { challengeRef, solutionRef } = useRunnerStore();
+  
   const [challenge, setChallenge] = useState<Uint8ClampedArray>();
   const [solution, setSolution] = useState<Uint8ClampedArray>();
   const [copy, setCopy] = useState<Uint8ClampedArray>();
