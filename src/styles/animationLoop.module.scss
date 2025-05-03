@@ -1,0 +1,49 @@
+.solution {
+  height: 50px;
+  width: 50px;
+  animation-duration: 4s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-name: spincube;
+  animation-composition: ease-in;
+  background-color: green;
+}
+
+@keyframes spincube {
+    from,to      {}
+    0%,5% {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+      transform: rotate(0deg);
+    }
+    22%,28%      { 
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+      transform: rotate(135deg);
+    }
+    47%,53%      {
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+      transform: rotate(270deg);
+    }
+    72%,78%      {
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 25px;
+      transform: rotate(405deg);
+    }
+    95%,100%      {
+      border-top-left-radius: 25px;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+      border-top-right-radius: 25px;
+      transform: rotate(540deg);
+    }
+}

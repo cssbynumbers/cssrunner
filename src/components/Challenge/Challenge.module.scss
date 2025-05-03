@@ -1,19 +1,4 @@
-
-.challengeContainer {
-
-}
-
 .challenge {
-  width: 500px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  gap: 50px;
-}
-
-.challengeOne {
   height: 50px;
   width: 75px;
   position: relative;
@@ -21,8 +6,8 @@
   border-radius: 50%;
 }
 
-.challengeOne:after,
-.challengeOne:before {
+.challenge:after,
+.challenge:before {
   height: 25px;
   width: 25px;
   border-radius: 50%;
@@ -33,11 +18,11 @@
   position: absolute;
 }
 
-.challengeOne:before {
+.challenge:before {
   left: 0;
 }
 
-.challengeOne:after {
+.challenge:after {
   right: 0;
 }
 

@@ -4,7 +4,8 @@ import { getHexFromUint8 } from '../../utils/getHexFromUint8';
 import useRunnerStore from '../../utils/useRunnerStore';
 
 const Comparison = () => {
-  const { challengeRef, solutionRef } = useRunnerStore();
+  const challengeRef = useRunnerStore(s => s.challengeRef);
+  const solutionRef = useRunnerStore(s => s.solutionRef);
   
   const [challenge, setChallenge] = useState<Uint8ClampedArray>();
   const [solution, setSolution] = useState<Uint8ClampedArray>();
@@ -14,6 +15,8 @@ const Comparison = () => {
   // convert refs to image data
   useEffect(() => {
     let ignore = false;
+
+    console.info('converting to image data')
   
     async function convertToImage() {
       const challengeData = await htmlToImage.toPixelData(challengeRef.current);
@@ -39,7 +42,6 @@ const Comparison = () => {
 
     const localCopy = new Uint8ClampedArray(solution);
 
-    
     console.info(challenge, `Total: ${challenge.length / 4} pixels`);
     console.info(localCopy, `Copy Total: ${localCopy.length / 4} pixels`);
 
@@ -128,8 +130,6 @@ const Comparison = () => {
             <p>Result: {`${results.received + results.unexpected} / ${results.expected} (${((results.received / results.expected) * 100).toFixed(2)}%)`}</p>
             <p>Unexpected pixels: {results.unexpected}</p>            
             <p>Unexpected color: {results.wrongColor}</p>
-
-            <div className="replicate"></div>
           </>
         )
       }

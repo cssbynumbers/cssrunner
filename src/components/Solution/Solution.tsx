@@ -1,16 +1,15 @@
 import useRunnerStore from '../../utils/useRunnerStore';
-import styles from './Solution.module.scss';
+import solutionStyles from './Solution.module.scss';
 
 const Solution = () => {
-  const { solutionRef } = useRunnerStore();
+  const { styles, solutionRef } = useRunnerStore();
 
   return (
     <div>
+      <style>{styles}</style>
       <h3>Solution</h3>
-      <div className={styles.solution} ref={solutionRef}>
-        <div className={styles.solutionOne} />
-        <div className={styles.solutionTwo} />
-        <div className={styles.solutionThree} />
+      <div className={solutionStyles.solutionContainer} ref={solutionRef}>
+        <div className="solution" />
       </div>
     </div>
   );

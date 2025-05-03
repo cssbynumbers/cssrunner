@@ -1,16 +1,21 @@
+import { useEffect, useMemo } from 'react';
 import useRunnerStore from '../../utils/useRunnerStore';
+import containerStyles from './container.module.scss'
 import styles from './Challenge.module.scss'
 
 const Challenge = () => {
-  const { challengeRef } = useRunnerStore();
+  const { challengeRef, challengeKey } = useRunnerStore();
+
+  const randomStyles = useMemo(() => {
+    const randomInt = Math.floor(Math.random() * Object.keys(styles).length);
+    return styles[Object.keys(styles)[randomInt]]
+  }, [challengeKey]);
 
   return (
-    <div className={styles.challengeContainer}>
+    <div>
       <h3>Challenge</h3>  
-      <div className={styles.challenge} ref={challengeRef}>
-        <div className={styles.challengeOne} />
-        <div className={styles.challengeTwo} />
-        <div className={styles.challengeThree} />
+      <div className={containerStyles.challengeContainer} ref={challengeRef}>
+        <div className={randomStyles} />
       </div>
     </div>
   )
