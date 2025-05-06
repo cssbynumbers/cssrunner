@@ -1,5 +1,5 @@
 import * as htmlToImage from 'html-to-image';
-import { type ComponentPropsWithoutRef, type Ref, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getHexFromUint8 } from '../../utils/getHexFromUint8';
 import useRunnerStore from '../../utils/useRunnerStore';
 

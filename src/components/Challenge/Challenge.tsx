@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 import useRunnerStore from '../../utils/useRunnerStore';
 import containerStyles from './container.module.scss'
 import styles from './Challenge.module.scss'
@@ -13,7 +13,8 @@ const Challenge = () => {
 
   return (
     <div>
-      <h3>Challenge</h3>  
+      <h3>Challenge</h3>
+      <p>Random challenge generated when clicking the reset button.</p>  
       <div className={containerStyles.challengeContainer} ref={challengeRef}>
         <div className={randomStyles} />
       </div>

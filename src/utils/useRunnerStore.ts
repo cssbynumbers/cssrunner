@@ -6,8 +6,36 @@ import { createRef, Ref } from 'react';
 const challengeRef = createRef<HTMLDivElement>();
 const solutionRef = createRef<HTMLDivElement>();
 
-const defaultStylesValue = `.solution {
+const defaultStylesValue = `/* Add your CSS here and see it reflected in the 'Solution' box. */
+
+.solution {
+  --color: green;
+  --size: 20px;
   
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--color);
+  position: relative;
+
+  &:before, &:after {
+    background-color: var(--color);
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    height: var(--size);
+    width: var(--size);
+  }
+  
+  &:before {
+    --color: red;
+    left: calc(0px - (var(--size) * 1.5));
+  }
+
+  &:after {
+    --color: blue;
+    right: calc(0px - var(--size) * 1.5)
+  }
 }`
 
 interface RunnerState {

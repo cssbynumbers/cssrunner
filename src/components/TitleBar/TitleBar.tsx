@@ -10,7 +10,7 @@ const TitleBar = () => {
       <h3>CSS Runner</h3>
       <div className="controls">
         <button onClick={validate}>
-          Verify Solution
+          Validate Solution
         </button>
         <button onClick={reset}>
           Reset
